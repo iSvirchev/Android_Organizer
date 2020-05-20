@@ -8,15 +8,13 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    private Button converterActivityBtn;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        converterActivityBtn = findViewById(R.id.converterActivityBtn);
+        Button converterActivityBtn = findViewById(R.id.converterActivityBtn);
 
         converterActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override

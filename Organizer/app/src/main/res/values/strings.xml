@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Organizer</string>
     <string name="converter">Converter</string>
+    <string name="metric_imperial">Metric/Imperial</string>
+    <string name="imperial">Imperial</string>
+    <string name="metric">Metric</string>
 </resources>
