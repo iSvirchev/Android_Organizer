@@ -4,4 +4,8 @@
     <string name="metric_imperial">Metric/Imperial</string>
     <string name="imperial">Imperial</string>
     <string name="metric">Metric</string>
+    <string name="gallon">gallon</string>
+    <string name="liter">liter</string>
+    <string name="lb">lb</string>
+    <string name="kg">kg</string>
 </resources>

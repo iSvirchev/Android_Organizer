@@ -6,15 +6,61 @@
     android:layout_height="match_parent"
     tools:context=".Converter">
 
+    <EditText
+        android:id="@+id/gallon_tv"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="64dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        android:maxLength="15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imp_tv"
+        android:tag="gallon" />
+
+    <TextView
+        android:id="@+id/gallon_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:text="@string/gallon"
+        app:layout_constraintStart_toEndOf="@+id/lb_tv"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/liter_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:text="@string/liter"
+        app:layout_constraintStart_toEndOf="@+id/kg_tv"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/liter_tv"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="92dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        android:maxLength="15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/metric_tv"
+        android:tag="liter"/>
+
     <TextView
         android:id="@+id/metric_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
-        android:textSize="20sp"
         android:text="@string/metric"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,18 +69,18 @@
         android:id="@+id/imp_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="112dp"
         android:gravity="center"
         android:text="@string/imperial"
-        android:textStyle="bold"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/kg_tv"
-        android:layout_width="162dp"
+        android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
@@ -43,19 +89,39 @@
         android:inputType="numberDecimal"
         android:maxLength="15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/metric_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/metric_tv"
+        android:tag="kg"/>
 
     <EditText
         android:id="@+id/lb_tv"
-        android:layout_width="160dp"
+        android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginEnd="64dp"
         android:ems="10"
         android:gravity="center"
         android:inputType="numberDecimal"
         android:maxLength="15"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imp_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/imp_tv"
+        android:tag="lb"/>
+
+    <TextView
+        android:id="@+id/kg_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:text="@string/kg"
+        app:layout_constraintStart_toEndOf="@+id/kg_tv"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lb_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:text="@string/lb"
+        app:layout_constraintStart_toEndOf="@+id/lb_tv"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
