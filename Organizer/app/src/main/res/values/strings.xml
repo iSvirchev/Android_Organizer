@@ -8,4 +8,6 @@
     <string name="liter">liter</string>
     <string name="lb">lb</string>
     <string name="kg">kg</string>
+    <string name="f">F°</string>
+    <string name="c">C°</string>
 </resources>
