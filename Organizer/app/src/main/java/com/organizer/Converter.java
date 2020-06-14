@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Converter extends AppCompatActivity {
+    private TextView m_ton_tv;
+    private TextView us_ton_tv;
     private TextView kg_tv;
     private TextView lb_tv;
     private TextView gram_tv;
@@ -31,6 +33,8 @@ public class Converter extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_converter);
 
+        m_ton_tv = findViewById(R.id.m_ton_tv);
+        us_ton_tv = findViewById(R.id.us_ton_tv);
         kg_tv = findViewById(R.id.kg_tv);
         lb_tv = findViewById(R.id.lb_tv);
         gram_tv = findViewById(R.id.gram_tv);
@@ -48,6 +52,8 @@ public class Converter extends AppCompatActivity {
         cm_tv = findViewById(R.id.cm_tv);
         in_tv = findViewById(R.id.in_tv);
 
+        m_ton_tv.addTextChangedListener(generateTextWatcher(m_ton_tv, us_ton_tv));
+        us_ton_tv.addTextChangedListener(generateTextWatcher(us_ton_tv, m_ton_tv));
         kg_tv.addTextChangedListener(generateTextWatcher(kg_tv,lb_tv));
         lb_tv.addTextChangedListener(generateTextWatcher(lb_tv,kg_tv));
         gram_tv.addTextChangedListener(generateTextWatcher(gram_tv, oz_tv));
@@ -102,6 +108,7 @@ public class Converter extends AppCompatActivity {
     }
 
     private double convert(double op, String operation) {   // op = operand -> the measurement in the 'operation' string
+        double MTON_USTON_RATIO = 1.1023;
         double KG_LB_RATIO = 2.20462;
         double LITER_GAL_RATIO = 0.264172;
         double ML_OZ_RATIO = 0.033814;
@@ -143,6 +150,10 @@ public class Converter extends AppCompatActivity {
                 return op * GR_OZ_RATIO;
             case "oz":
                 return op / GR_OZ_RATIO;
+            case "m_ton":
+                return op * MTON_USTON_RATIO;
+            case "us_ton":
+                return op / MTON_USTON_RATIO;
 
             default: return 0;
         }

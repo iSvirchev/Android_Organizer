@@ -39,4 +39,8 @@
     <string name="ounces">Ounces</string>
     <string name="g">g</string>
     <string name="grams">Grams</string>
+    <string name="metric_tons">Metric Tons</string>
+    <string name="us_tons">US Tons</string>
+    <string name="t">t</string>
+    <string name="us_t">US t</string>
 </resources>
