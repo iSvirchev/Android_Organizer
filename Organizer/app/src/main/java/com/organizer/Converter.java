@@ -16,7 +16,7 @@ public class Converter extends AppCompatActivity {
     private TextView celsius_tv;
     private TextView fahrenheit_tv;
     private TextView ml_tv;
-    private TextView oz_tv;
+    private TextView foz_tv;
     private TextView km_tv;
     private TextView miles_tv;
     private TextView m_tv;
@@ -36,7 +36,7 @@ public class Converter extends AppCompatActivity {
         celsius_tv = findViewById(R.id.celsius_tv);
         fahrenheit_tv = findViewById(R.id.fahrenheit_tv);
         ml_tv = findViewById(R.id.ml_tv);
-        oz_tv = findViewById(R.id.oz_tv);
+        foz_tv = findViewById(R.id.foz_tv);
         km_tv = findViewById(R.id.km_tv);
         miles_tv = findViewById(R.id.miles_tv);
         m_tv = findViewById(R.id.m_tv);
@@ -50,8 +50,8 @@ public class Converter extends AppCompatActivity {
         lb_tv.addTextChangedListener(generateTextWatcher(lb_tv,kg_tv));
         celsius_tv.addTextChangedListener(generateTextWatcher(celsius_tv, fahrenheit_tv));
         fahrenheit_tv.addTextChangedListener(generateTextWatcher(fahrenheit_tv, celsius_tv));
-        ml_tv.addTextChangedListener(generateTextWatcher(ml_tv, oz_tv));
-        oz_tv.addTextChangedListener(generateTextWatcher(oz_tv, ml_tv));
+        ml_tv.addTextChangedListener(generateTextWatcher(ml_tv, foz_tv));
+        foz_tv.addTextChangedListener(generateTextWatcher(foz_tv, ml_tv));
         km_tv.addTextChangedListener(generateTextWatcher(km_tv, miles_tv));
         miles_tv.addTextChangedListener(generateTextWatcher(miles_tv, km_tv));
         m_tv.addTextChangedListener(generateTextWatcher(m_tv, ft_tv));
@@ -118,7 +118,7 @@ public class Converter extends AppCompatActivity {
                 return (op - 32) * 0.5556;
             case "ml":
                 return op * ML_OZ_RATIO;
-            case "oz":
+            case "foz":
                 return op / ML_OZ_RATIO;
             case "km":
                 return op * KM_MILES_RATIO;

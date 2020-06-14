@@ -35,4 +35,6 @@
     <string name="inches">Inches</string>
     <string name="cm">cm</string>
     <string name="in">in</string>
+    <string name="foz">foz</string>
+    <string name="fluid_ounces">Fluid Ounces</string>
 </resources>
