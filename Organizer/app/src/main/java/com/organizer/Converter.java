@@ -17,6 +17,10 @@ public class Converter extends AppCompatActivity {
     private TextView fahrenheit_tv;
     private TextView ml_tv;
     private TextView oz_tv;
+    private TextView km_tv;
+    private TextView miles_tv;
+    private TextView m_tv;
+    private TextView ft_tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,11 @@ public class Converter extends AppCompatActivity {
         fahrenheit_tv = findViewById(R.id.fahrenheit_tv);
         ml_tv = findViewById(R.id.ml_tv);
         oz_tv = findViewById(R.id.oz_tv);
+        km_tv = findViewById(R.id.km_tv);
+        miles_tv = findViewById(R.id.miles_tv);
+        m_tv = findViewById(R.id.m_tv);
+        ft_tv = findViewById(R.id.ft_tv);
+
 
         gallon_tv.addTextChangedListener(generateTextWatcher(gallon_tv,liter_tv));
         liter_tv.addTextChangedListener(generateTextWatcher(liter_tv,gallon_tv));
@@ -40,6 +49,10 @@ public class Converter extends AppCompatActivity {
         fahrenheit_tv.addTextChangedListener(generateTextWatcher(fahrenheit_tv, celsius_tv));
         ml_tv.addTextChangedListener(generateTextWatcher(ml_tv, oz_tv));
         oz_tv.addTextChangedListener(generateTextWatcher(oz_tv, ml_tv));
+        km_tv.addTextChangedListener(generateTextWatcher(km_tv, miles_tv));
+        miles_tv.addTextChangedListener(generateTextWatcher(miles_tv, km_tv));
+        m_tv.addTextChangedListener(generateTextWatcher(m_tv, ft_tv));
+        ft_tv.addTextChangedListener(generateTextWatcher(ft_tv, m_tv));
     }
 
     private TextWatcher generateTextWatcher(final TextView focused_tv, final TextView toChange_tv) {
@@ -81,6 +94,8 @@ public class Converter extends AppCompatActivity {
         double KG_LB_RATIO = 2.20462;
         double LITER_GAL_RATIO = 0.264172;
         double ML_OZ_RATIO = 0.033814;
+        double KM_MILES_RATIO = 0.62137;
+        double M_FT_RATIO = 3.2808;
 
         switch (operation){    // A switch on the editView's tags
             case "kg":
@@ -99,6 +114,14 @@ public class Converter extends AppCompatActivity {
                 return op * ML_OZ_RATIO;
             case "oz":
                 return op / ML_OZ_RATIO;
+            case "km":
+                return op * KM_MILES_RATIO;
+            case "miles":
+                return op / KM_MILES_RATIO;
+            case "m":
+                return op * M_FT_RATIO;
+            case "ft":
+                return op / M_FT_RATIO;
 
             default: return 0;
         }

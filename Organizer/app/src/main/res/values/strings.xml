@@ -23,4 +23,12 @@
     <string name="pounds">Pounds</string>
     <string name="gal">gal</string>
     <string name="l">L</string>
+    <string name="miles">Miles</string>
+    <string name="kilometers">Kilometers</string>
+    <string name="km">km</string>
+    <string name="mi">mi</string>
+    <string name="ft">ft</string>
+    <string name="m">m</string>
+    <string name="meters">Meters</string>
+    <string name="feet">Feet</string>
 </resources>
