@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Converter">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <EditText
         android:id="@+id/oz_tv"
+        android:hint="@string/ounces"
+        android:importantForAutofill="no"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginTop="210dp"
@@ -22,6 +28,8 @@
 
     <EditText
         android:id="@+id/ml_tv"
+        android:hint="@string/milliliters"
+        android:importantForAutofill="no"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginStart="30dp"
@@ -54,6 +62,8 @@
 
     <EditText
         android:id="@+id/fahrenheit_tv"
+        android:hint="@string/fahrenheit"
+        android:importantForAutofill="no"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginTop="150dp"
@@ -68,6 +78,8 @@
 
     <EditText
         android:id="@+id/celsius_tv"
+        android:hint="@string/celsius"
+        android:importantForAutofill="no"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginStart="30dp"
@@ -100,6 +112,8 @@
 
     <EditText
         android:id="@+id/gallon_tv"
+        android:hint="@string/gallons"
+        android:importantForAutofill="no"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginTop="90dp"
@@ -117,7 +131,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="148dp"
-        android:text="@string/gallon"
+        android:text="@string/gal"
         app:layout_constraintStart_toEndOf="@+id/lb_tv"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -126,12 +140,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="144dp"
-        android:text="@string/liter"
+        android:text="@string/l"
         app:layout_constraintStart_toEndOf="@+id/kg_tv"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/liter_tv"
+        android:hint="@string/liters"
+        android:importantForAutofill="no"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginStart="30dp"
@@ -172,6 +188,8 @@
 
     <EditText
         android:id="@+id/kg_tv"
+        android:hint="@string/kilograms"
+        android:importantForAutofill="no"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginStart="30dp"
@@ -186,6 +204,8 @@
 
     <EditText
         android:id="@+id/lb_tv"
+        android:hint="@string/pounds"
+        android:importantForAutofill="no"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginTop="30dp"
@@ -215,5 +235,5 @@
         android:text="@string/lb"
         app:layout_constraintStart_toEndOf="@+id/lb_tv"
         app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

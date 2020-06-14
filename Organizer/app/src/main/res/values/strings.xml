@@ -12,4 +12,15 @@
     <string name="c">C°</string>
     <string name="ml">ml</string>
     <string name="fl_oz_us">fl oz(US)</string>
+    <string name="oz">oz</string>
+    <string name="fahrenheit">Fahrenheit</string>
+    <string name="milliliters">Milliliters</string>
+    <string name="ounces">Ounces</string>
+    <string name="celsius">Celsius</string>
+    <string name="gallons">Gallons</string>
+    <string name="liters">Liters</string>
+    <string name="kilograms">Kilograms</string>
+    <string name="pounds">Pounds</string>
+    <string name="gal">gal</string>
+    <string name="l">L</string>
 </resources>
