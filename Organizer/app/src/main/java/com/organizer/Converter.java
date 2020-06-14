@@ -15,6 +15,8 @@ public class Converter extends AppCompatActivity {
     private TextView liter_tv;
     private TextView celsius_tv;
     private TextView fahrenheit_tv;
+    private TextView ml_tv;
+    private TextView oz_tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,8 @@ public class Converter extends AppCompatActivity {
         liter_tv = findViewById(R.id.liter_tv);
         celsius_tv = findViewById(R.id.celsius_tv);
         fahrenheit_tv = findViewById(R.id.fahrenheit_tv);
+        ml_tv = findViewById(R.id.ml_tv);
+        oz_tv = findViewById(R.id.oz_tv);
 
         gallon_tv.addTextChangedListener(generateTextWatcher(gallon_tv,liter_tv));
         liter_tv.addTextChangedListener(generateTextWatcher(liter_tv,gallon_tv));
@@ -34,6 +38,8 @@ public class Converter extends AppCompatActivity {
         lb_tv.addTextChangedListener(generateTextWatcher(lb_tv,kg_tv));
         celsius_tv.addTextChangedListener(generateTextWatcher(celsius_tv, fahrenheit_tv));
         fahrenheit_tv.addTextChangedListener(generateTextWatcher(fahrenheit_tv, celsius_tv));
+        ml_tv.addTextChangedListener(generateTextWatcher(ml_tv, oz_tv));
+        oz_tv.addTextChangedListener(generateTextWatcher(oz_tv, ml_tv));
     }
 
     private TextWatcher generateTextWatcher(final TextView focused_tv, final TextView toChange_tv) {
@@ -74,6 +80,7 @@ public class Converter extends AppCompatActivity {
     private double convert(double op, String operation) {   // op = operand -> the measurement in the 'operation' string
         double KG_LB_RATIO = 2.20462;
         double LITER_GAL_RATIO = 0.264172;
+        double ML_OZ_RATIO = 0.033814;
 
         switch (operation){    // A switch on the editView's tags
             case "kg":
@@ -88,6 +95,10 @@ public class Converter extends AppCompatActivity {
                 return (op * 1.8) + 32;
             case "fahren":
                 return (op - 32) * 0.5556;
+            case "ml":
+                return op * ML_OZ_RATIO;
+            case "oz":
+                return op / ML_OZ_RATIO;
 
             default: return 0;
         }

@@ -10,4 +10,6 @@
     <string name="kg">kg</string>
     <string name="f">F°</string>
     <string name="c">C°</string>
+    <string name="ml">ml</string>
+    <string name="fl_oz_us">fl oz(US)</string>
 </resources>
