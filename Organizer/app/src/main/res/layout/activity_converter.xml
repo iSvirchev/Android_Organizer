@@ -16,7 +16,7 @@
             android:id="@+id/in_tv"
             android:layout_width="120dp"
             android:layout_height="40dp"
-            android:layout_marginTop="390dp"
+            android:layout_marginTop="450dp"
             android:layout_marginEnd="64dp"
             android:ems="10"
             android:gravity="center"
@@ -33,7 +33,7 @@
             android:layout_width="120dp"
             android:layout_height="40dp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="390dp"
+            android:layout_marginTop="450dp"
             android:ems="10"
             android:gravity="center"
             android:hint="@string/centimeters"
@@ -48,7 +48,7 @@
             android:id="@+id/cm_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="444dp"
+            android:layout_marginTop="504dp"
             android:text="@string/cm"
             app:layout_constraintStart_toEndOf="@+id/kg_tv"
             app:layout_constraintTop_toTopOf="parent" />
@@ -57,7 +57,7 @@
             android:id="@+id/in_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="444dp"
+            android:layout_marginTop="504dp"
             android:text="@string/in"
             app:layout_constraintStart_toEndOf="@+id/lb_tv"
             app:layout_constraintTop_toTopOf="parent" />
@@ -67,7 +67,7 @@
             android:id="@+id/ft_tv"
             android:layout_width="120dp"
             android:layout_height="40dp"
-            android:layout_marginTop="330dp"
+            android:layout_marginTop="390dp"
             android:layout_marginEnd="64dp"
             android:ems="10"
             android:gravity="center"
@@ -84,7 +84,7 @@
             android:layout_width="120dp"
             android:layout_height="40dp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="330dp"
+            android:layout_marginTop="390dp"
             android:ems="10"
             android:gravity="center"
             android:hint="@string/meters"
@@ -99,7 +99,7 @@
             android:id="@+id/m_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="384dp"
+            android:layout_marginTop="444dp"
             android:text="@string/m"
             app:layout_constraintStart_toEndOf="@+id/kg_tv"
             app:layout_constraintTop_toTopOf="parent" />
@@ -108,7 +108,7 @@
             android:id="@+id/ft_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="384dp"
+            android:layout_marginTop="444dp"
             android:text="@string/ft"
             app:layout_constraintStart_toEndOf="@+id/lb_tv"
             app:layout_constraintTop_toTopOf="parent" />
@@ -118,7 +118,7 @@
             android:id="@+id/miles_tv"
             android:layout_width="120dp"
             android:layout_height="40dp"
-            android:layout_marginTop="270dp"
+            android:layout_marginTop="330dp"
             android:layout_marginEnd="64dp"
             android:ems="10"
             android:gravity="center"
@@ -135,7 +135,7 @@
             android:layout_width="120dp"
             android:layout_height="40dp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="270dp"
+            android:layout_marginTop="330dp"
             android:ems="10"
             android:gravity="center"
             android:hint="@string/kilometers"
@@ -150,7 +150,7 @@
             android:id="@+id/km_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="324dp"
+            android:layout_marginTop="384dp"
             android:text="@string/km"
             app:layout_constraintStart_toEndOf="@+id/kg_tv"
             app:layout_constraintTop_toTopOf="parent" />
@@ -159,59 +159,8 @@
             android:id="@+id/miles_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="324dp"
+            android:layout_marginTop="384dp"
             android:text="@string/mi"
-            app:layout_constraintStart_toEndOf="@+id/lb_tv"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <!--Milliliters and Fluid Ounces-->
-        <EditText
-            android:id="@+id/foz_tv"
-            android:layout_width="120dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="150dp"
-            android:layout_marginEnd="64dp"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="@string/fluid_ounces"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-            android:maxLength="15"
-            android:tag="@string/foz"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imp_tv" />
-
-        <EditText
-            android:id="@+id/ml_tv"
-            android:layout_width="120dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="150dp"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="@string/milliliters"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-            android:maxLength="15"
-            android:tag="ml"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/metric_tv" />
-
-        <TextView
-            android:id="@+id/ml_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="204dp"
-            android:text="@string/ml"
-            app:layout_constraintStart_toEndOf="@+id/kg_tv"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/foz_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="204dp"
-            android:text="@string/fl_oz_us"
             app:layout_constraintStart_toEndOf="@+id/lb_tv"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -220,7 +169,7 @@
             android:id="@+id/fahrenheit_tv"
             android:layout_width="120dp"
             android:layout_height="40dp"
-            android:layout_marginTop="210dp"
+            android:layout_marginTop="270dp"
             android:layout_marginEnd="64dp"
             android:ems="10"
             android:gravity="center"
@@ -237,7 +186,7 @@
             android:layout_width="120dp"
             android:layout_height="40dp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="210dp"
+            android:layout_marginTop="270dp"
             android:ems="10"
             android:gravity="center"
             android:hint="@string/celsius"
@@ -252,7 +201,7 @@
             android:id="@+id/celsius_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="264dp"
+            android:layout_marginTop="324dp"
             android:text="@string/c"
             app:layout_constraintStart_toEndOf="@id/celsius_tv"
             app:layout_constraintTop_toTopOf="parent" />
@@ -261,17 +210,68 @@
             android:id="@+id/fahren_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="264dp"
+            android:layout_marginTop="324dp"
             android:text="@string/f"
             app:layout_constraintStart_toEndOf="@+id/fahrenheit_tv"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <!--Milliliters and Fluid Ounces-->
+        <EditText
+        android:id="@+id/foz_tv"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="210dp"
+        android:layout_marginEnd="64dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/fluid_ounces"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:maxLength="15"
+        android:tag="@string/foz"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imp_tv" />
+
+        <EditText
+        android:id="@+id/ml_tv"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="210dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/milliliters"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:maxLength="15"
+        android:tag="ml"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/metric_tv" />
+
+        <TextView
+        android:id="@+id/ml_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="264dp"
+        android:text="@string/ml"
+        app:layout_constraintStart_toEndOf="@+id/kg_tv"
+        app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+        android:id="@+id/foz_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="264dp"
+        android:text="@string/fl_oz_us"
+        app:layout_constraintStart_toEndOf="@+id/lb_tv"
+        app:layout_constraintTop_toTopOf="parent" />
 
         <!--Liters and Gallons-->
         <EditText
             android:id="@+id/gallon_tv"
             android:layout_width="120dp"
             android:layout_height="40dp"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="150dp"
             android:layout_marginEnd="64dp"
             android:ems="10"
             android:gravity="center"
@@ -287,7 +287,7 @@
             android:id="@+id/gallon_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="148dp"
+            android:layout_marginTop="204dp"
             android:text="@string/gal"
             app:layout_constraintStart_toEndOf="@+id/lb_tv"
             app:layout_constraintTop_toTopOf="parent" />
@@ -296,7 +296,7 @@
             android:id="@+id/liter_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="144dp"
+            android:layout_marginTop="204dp"
             android:text="@string/l"
             app:layout_constraintStart_toEndOf="@+id/kg_tv"
             app:layout_constraintTop_toTopOf="parent" />
@@ -306,7 +306,7 @@
             android:layout_width="120dp"
             android:layout_height="40dp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="150dp"
             android:ems="10"
             android:gravity="center"
             android:hint="@string/liters"
@@ -314,6 +314,57 @@
             android:inputType="numberDecimal"
             android:maxLength="15"
             android:tag="liter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/metric_tv" />
+
+        <!--Grams and Ounces-->
+        <EditText
+            android:id="@+id/oz_tv"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="90dp"
+            android:layout_marginEnd="64dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/ounces"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:maxLength="15"
+            android:tag="oz"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imp_tv" />
+
+        <TextView
+            android:id="@+id/oz_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="144dp"
+            android:text="@string/oz"
+            app:layout_constraintStart_toEndOf="@+id/lb_tv"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/gram_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="144dp"
+            android:text="@string/g"
+            app:layout_constraintStart_toEndOf="@+id/kg_tv"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/gram_tv"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="90dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/grams"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:maxLength="15"
+            android:tag="gram"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/metric_tv" />
 

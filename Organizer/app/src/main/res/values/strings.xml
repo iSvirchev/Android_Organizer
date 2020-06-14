@@ -15,7 +15,6 @@
     <string name="oz">oz</string>
     <string name="fahrenheit">Fahrenheit</string>
     <string name="milliliters">Milliliters</string>
-    <string name="ounces">Ounces</string>
     <string name="celsius">Celsius</string>
     <string name="gallons">Gallons</string>
     <string name="liters">Liters</string>
@@ -37,4 +36,7 @@
     <string name="in">in</string>
     <string name="foz">foz</string>
     <string name="fluid_ounces">Fluid Ounces</string>
+    <string name="ounces">Ounces</string>
+    <string name="g">g</string>
+    <string name="grams">Grams</string>
 </resources>

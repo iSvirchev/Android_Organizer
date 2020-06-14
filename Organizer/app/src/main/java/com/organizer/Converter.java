@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Converter extends AppCompatActivity {
     private TextView kg_tv;
     private TextView lb_tv;
+    private TextView gram_tv;
+    private TextView oz_tv;
     private TextView gallon_tv;
     private TextView liter_tv;
     private TextView celsius_tv;
@@ -31,6 +33,8 @@ public class Converter extends AppCompatActivity {
 
         kg_tv = findViewById(R.id.kg_tv);
         lb_tv = findViewById(R.id.lb_tv);
+        gram_tv = findViewById(R.id.gram_tv);
+        oz_tv = findViewById(R.id.oz_tv);
         gallon_tv = findViewById(R.id.gallon_tv);
         liter_tv = findViewById(R.id.liter_tv);
         celsius_tv = findViewById(R.id.celsius_tv);
@@ -44,10 +48,12 @@ public class Converter extends AppCompatActivity {
         cm_tv = findViewById(R.id.cm_tv);
         in_tv = findViewById(R.id.in_tv);
 
-        gallon_tv.addTextChangedListener(generateTextWatcher(gallon_tv,liter_tv));
-        liter_tv.addTextChangedListener(generateTextWatcher(liter_tv,gallon_tv));
         kg_tv.addTextChangedListener(generateTextWatcher(kg_tv,lb_tv));
         lb_tv.addTextChangedListener(generateTextWatcher(lb_tv,kg_tv));
+        gram_tv.addTextChangedListener(generateTextWatcher(gram_tv, oz_tv));
+        oz_tv.addTextChangedListener(generateTextWatcher(oz_tv, gram_tv));
+        gallon_tv.addTextChangedListener(generateTextWatcher(gallon_tv,liter_tv));
+        liter_tv.addTextChangedListener(generateTextWatcher(liter_tv,gallon_tv));
         celsius_tv.addTextChangedListener(generateTextWatcher(celsius_tv, fahrenheit_tv));
         fahrenheit_tv.addTextChangedListener(generateTextWatcher(fahrenheit_tv, celsius_tv));
         ml_tv.addTextChangedListener(generateTextWatcher(ml_tv, foz_tv));
@@ -102,6 +108,7 @@ public class Converter extends AppCompatActivity {
         double KM_MILES_RATIO = 0.62137;
         double M_FT_RATIO = 3.2808;
         double CM_IN_RATION = 0.39370;
+        double GR_OZ_RATIO = 0.035274;
 
         switch (operation){    // A switch on the editView's tags
             case "kg":
@@ -132,6 +139,10 @@ public class Converter extends AppCompatActivity {
                 return op * CM_IN_RATION;
             case "in":
                 return op / CM_IN_RATION;
+            case "gram":
+                return op * GR_OZ_RATIO;
+            case "oz":
+                return op / GR_OZ_RATIO;
 
             default: return 0;
         }
