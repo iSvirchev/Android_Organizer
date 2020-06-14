@@ -107,6 +107,9 @@ public class Converter extends AppCompatActivity {
         };
     }
 
+    // TODO: conversion of metric units to imperial runs is straight forward,
+    //  however for a US citizen 2.2lb (1kg) is incorrect. The correct measurement is 2lb 3.2740oz
+    //  CHeck if there is a way around this.
     private double convert(double op, String operation) {   // op = operand -> the measurement in the 'operation' string
         double MTON_USTON_RATIO = 1.1023;
         double KG_LB_RATIO = 2.20462;
