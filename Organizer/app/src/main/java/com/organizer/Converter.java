@@ -21,6 +21,8 @@ public class Converter extends AppCompatActivity {
     private TextView miles_tv;
     private TextView m_tv;
     private TextView ft_tv;
+    private TextView cm_tv;
+    private TextView in_tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +41,8 @@ public class Converter extends AppCompatActivity {
         miles_tv = findViewById(R.id.miles_tv);
         m_tv = findViewById(R.id.m_tv);
         ft_tv = findViewById(R.id.ft_tv);
-
+        cm_tv = findViewById(R.id.cm_tv);
+        in_tv = findViewById(R.id.in_tv);
 
         gallon_tv.addTextChangedListener(generateTextWatcher(gallon_tv,liter_tv));
         liter_tv.addTextChangedListener(generateTextWatcher(liter_tv,gallon_tv));
@@ -53,6 +56,8 @@ public class Converter extends AppCompatActivity {
         miles_tv.addTextChangedListener(generateTextWatcher(miles_tv, km_tv));
         m_tv.addTextChangedListener(generateTextWatcher(m_tv, ft_tv));
         ft_tv.addTextChangedListener(generateTextWatcher(ft_tv, m_tv));
+        cm_tv.addTextChangedListener(generateTextWatcher(cm_tv, in_tv));
+        in_tv.addTextChangedListener(generateTextWatcher(in_tv, cm_tv));
     }
 
     private TextWatcher generateTextWatcher(final TextView focused_tv, final TextView toChange_tv) {
@@ -96,6 +101,7 @@ public class Converter extends AppCompatActivity {
         double ML_OZ_RATIO = 0.033814;
         double KM_MILES_RATIO = 0.62137;
         double M_FT_RATIO = 3.2808;
+        double CM_IN_RATION = 0.39370;
 
         switch (operation){    // A switch on the editView's tags
             case "kg":
@@ -122,6 +128,10 @@ public class Converter extends AppCompatActivity {
                 return op * M_FT_RATIO;
             case "ft":
                 return op / M_FT_RATIO;
+            case "cm":
+                return op * CM_IN_RATION;
+            case "in":
+                return op / CM_IN_RATION;
 
             default: return 0;
         }

@@ -31,4 +31,8 @@
     <string name="m">m</string>
     <string name="meters">Meters</string>
     <string name="feet">Feet</string>
+    <string name="centimeters">Centimeters</string>
+    <string name="inches">Inches</string>
+    <string name="cm">cm</string>
+    <string name="in">in</string>
 </resources>
