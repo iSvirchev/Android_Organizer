@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openConverterActivity() {
-        Intent intent = new Intent(this, Converter.class);
+        Intent intent = new Intent(this, UnitConverter.class);
         startActivity(intent);
     }
 }

@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Converter extends AppCompatActivity {
+public class UnitConverter extends AppCompatActivity {
     private TextView m_ton_tv;
     private TextView us_ton_tv;
     private TextView kg_tv;
@@ -31,7 +31,7 @@ public class Converter extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_converter);
+        setContentView(R.layout.activity_unit_converter);
 
         m_ton_tv = findViewById(R.id.m_ton_tv);
         us_ton_tv = findViewById(R.id.us_ton_tv);
