@@ -9,25 +9,67 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Converter extends AppCompatActivity {
+    private TextView m_ton_tv;
+    private TextView us_ton_tv;
     private TextView kg_tv;
     private TextView lb_tv;
+    private TextView gram_tv;
+    private TextView oz_tv;
     private TextView gallon_tv;
     private TextView liter_tv;
+    private TextView celsius_tv;
+    private TextView fahrenheit_tv;
+    private TextView ml_tv;
+    private TextView foz_tv;
+    private TextView km_tv;
+    private TextView miles_tv;
+    private TextView m_tv;
+    private TextView ft_tv;
+    private TextView cm_tv;
+    private TextView in_tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_converter);
 
+        m_ton_tv = findViewById(R.id.m_ton_tv);
+        us_ton_tv = findViewById(R.id.us_ton_tv);
         kg_tv = findViewById(R.id.kg_tv);
         lb_tv = findViewById(R.id.lb_tv);
+        gram_tv = findViewById(R.id.gram_tv);
+        oz_tv = findViewById(R.id.oz_tv);
         gallon_tv = findViewById(R.id.gallon_tv);
         liter_tv = findViewById(R.id.liter_tv);
+        celsius_tv = findViewById(R.id.celsius_tv);
+        fahrenheit_tv = findViewById(R.id.fahrenheit_tv);
+        ml_tv = findViewById(R.id.ml_tv);
+        foz_tv = findViewById(R.id.foz_tv);
+        km_tv = findViewById(R.id.km_tv);
+        miles_tv = findViewById(R.id.miles_tv);
+        m_tv = findViewById(R.id.m_tv);
+        ft_tv = findViewById(R.id.ft_tv);
+        cm_tv = findViewById(R.id.cm_tv);
+        in_tv = findViewById(R.id.in_tv);
 
-        gallon_tv.addTextChangedListener(generateTextWatcher(gallon_tv,liter_tv));
-        liter_tv.addTextChangedListener(generateTextWatcher(liter_tv,gallon_tv));
+        m_ton_tv.addTextChangedListener(generateTextWatcher(m_ton_tv, us_ton_tv));
+        us_ton_tv.addTextChangedListener(generateTextWatcher(us_ton_tv, m_ton_tv));
         kg_tv.addTextChangedListener(generateTextWatcher(kg_tv,lb_tv));
         lb_tv.addTextChangedListener(generateTextWatcher(lb_tv,kg_tv));
+        gram_tv.addTextChangedListener(generateTextWatcher(gram_tv, oz_tv));
+        oz_tv.addTextChangedListener(generateTextWatcher(oz_tv, gram_tv));
+        gallon_tv.addTextChangedListener(generateTextWatcher(gallon_tv,liter_tv));
+        liter_tv.addTextChangedListener(generateTextWatcher(liter_tv,gallon_tv));
+        celsius_tv.addTextChangedListener(generateTextWatcher(celsius_tv, fahrenheit_tv));
+        fahrenheit_tv.addTextChangedListener(generateTextWatcher(fahrenheit_tv, celsius_tv));
+        ml_tv.addTextChangedListener(generateTextWatcher(ml_tv, foz_tv));
+        foz_tv.addTextChangedListener(generateTextWatcher(foz_tv, ml_tv));
+        km_tv.addTextChangedListener(generateTextWatcher(km_tv, miles_tv));
+        miles_tv.addTextChangedListener(generateTextWatcher(miles_tv, km_tv));
+        m_tv.addTextChangedListener(generateTextWatcher(m_tv, ft_tv));
+        ft_tv.addTextChangedListener(generateTextWatcher(ft_tv, m_tv));
+        cm_tv.addTextChangedListener(generateTextWatcher(cm_tv, in_tv));
+        in_tv.addTextChangedListener(generateTextWatcher(in_tv, cm_tv));
     }
 
     private TextWatcher generateTextWatcher(final TextView focused_tv, final TextView toChange_tv) {
@@ -41,10 +83,18 @@ public class Converter extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (focused_tv.hasFocus()) {
-                    if (!s.toString().trim().isEmpty()) {
+                    String input = s.toString().trim();
+                    if (   !input.isEmpty() &&
+                            !input.equals(".") &&
+                            !input.equals("-") ) {
                         double inputNum = Double.parseDouble(s.toString());
-                        double result = convert(inputNum, (String)focused_tv.getTag());
-                        toChange_tv.setText(String.format("%.3f", result));
+                        String tag = (String) focused_tv.getTag();
+                        double result = convert(inputNum, tag);
+                        if (tag.equals("cel") || tag.equals("fahren")){
+                            toChange_tv.setText(String.format("%.0f", result));
+                        }else{
+                            toChange_tv.setText(String.format("%.3f", result));
+                        }
                     } else {
                         toChange_tv.setText("");
                     }
@@ -57,19 +107,56 @@ public class Converter extends AppCompatActivity {
         };
     }
 
+    // TODO: conversion of metric units to imperial runs is straight forward,
+    //  however for a US citizen 2.2lb (1kg) is incorrect. The correct measurement is 2lb 3.2740oz
+    //  CHeck if there is a way around this.
     private double convert(double op, String operation) {   // op = operand -> the measurement in the 'operation' string
+        double MTON_USTON_RATIO = 1.1023;
         double KG_LB_RATIO = 2.20462;
-        double LITER_GAL_RATION = 0.264172;
+        double LITER_GAL_RATIO = 0.264172;
+        double ML_OZ_RATIO = 0.033814;
+        double KM_MILES_RATIO = 0.62137;
+        double M_FT_RATIO = 3.2808;
+        double CM_IN_RATION = 0.39370;
+        double GR_OZ_RATIO = 0.035274;
 
-        switch (operation){    // A switch on the textView's tags
+        switch (operation){    // A switch on the editView's tags
             case "kg":
                 return op * KG_LB_RATIO;
             case "lb":
                 return op / KG_LB_RATIO;
             case "liter":
-                return op * LITER_GAL_RATION;
+                return op * LITER_GAL_RATIO;
             case "gallon":
-                return op / LITER_GAL_RATION;
+                return op / LITER_GAL_RATIO;
+            case "cel":
+                return (op * 1.8) + 32;
+            case "fahren":
+                return (op - 32) * 0.5556;
+            case "ml":
+                return op * ML_OZ_RATIO;
+            case "foz":
+                return op / ML_OZ_RATIO;
+            case "km":
+                return op * KM_MILES_RATIO;
+            case "miles":
+                return op / KM_MILES_RATIO;
+            case "m":
+                return op * M_FT_RATIO;
+            case "ft":
+                return op / M_FT_RATIO;
+            case "cm":
+                return op * CM_IN_RATION;
+            case "in":
+                return op / CM_IN_RATION;
+            case "gram":
+                return op * GR_OZ_RATIO;
+            case "oz":
+                return op / GR_OZ_RATIO;
+            case "m_ton":
+                return op * MTON_USTON_RATIO;
+            case "us_ton":
+                return op / MTON_USTON_RATIO;
 
             default: return 0;
         }
