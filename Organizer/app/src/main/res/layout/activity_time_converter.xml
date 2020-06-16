@@ -11,11 +11,78 @@
         android:layout_height="729dp"
         android:focusableInTouchMode="true">
 
+<!--        Month + Week = Total Weeks-->
+        <!--<EditText
+            android:id="@+id/total_weeks_tv"
+            android:layout_width="240dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/total_weeks"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="15"
+            android:tag="total_weeks"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/months_tv" />
+
+        <EditText
+            android:id="@+id/months_tv"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/months"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="15"
+            android:tag="month_to_weeks"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/total_months_tv" />
+
+        <EditText
+            android:id="@+id/extra_weeks_tv"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="64dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/weeks"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/total_months_tv" />
+
+        <TextView
+            android:id="@+id/weeks_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="184dp"
+            android:hint="@string/weeks_label"
+            app:layout_constraintStart_toEndOf="@+id/extra_weeks_tv"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/months_label2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="184dp"
+            android:hint="@string/months_label"
+            app:layout_constraintStart_toEndOf="@+id/months_tv"
+            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        Year + Month = Total Months-->
         <EditText
             android:id="@+id/total_months_tv"
             android:layout_width="240dp"
             android:layout_height="40dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:ems="10"
             android:gravity="center"
             android:hint="@string/total_months"
@@ -25,7 +92,7 @@
             android:tag="total_months"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/extra_months_tv" />
+            app:layout_constraintTop_toBottomOf="@+id/years_tv" />
 
         <EditText
             android:id="@+id/years_tv"

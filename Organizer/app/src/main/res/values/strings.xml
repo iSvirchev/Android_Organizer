@@ -50,4 +50,7 @@
     <string name="months_label">months</string>
     <string name="years_label">years</string>
     <string name="total_months">Total Months</string>
+    <string name="weeks">Weeks</string>
+    <string name="weeks_label">weeks</string>
+    <string name="total_weeks">Total Weeks</string>
 </resources>

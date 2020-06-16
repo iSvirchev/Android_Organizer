@@ -10,9 +10,13 @@ import android.widget.TextView;
 
 public class TimeConverter extends AppCompatActivity {
     private final int YEAR_TO_MONTH_RATIO = 12;
+//    private final int MONTH_TO_WEEK_RATIO = 4;
     private TextView years_tv;
     private TextView extra_months_tv;
     private TextView total_months_tv;
+//    private TextView months_tv;
+//    private TextView extra_weeks_tv;
+//    private TextView total_weeks_tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,16 +26,23 @@ public class TimeConverter extends AppCompatActivity {
         years_tv = findViewById(R.id.years_tv);
         extra_months_tv = findViewById(R.id.extra_months_tv);
         total_months_tv = findViewById(R.id.total_months_tv);
+//        months_tv = findViewById(R.id.months_tv);
+//        extra_weeks_tv = findViewById(R.id.extra_weeks_tv);
+//        total_weeks_tv = findViewById(R.id.total_weeks_tv);
 
         years_tv.addTextChangedListener(generateMainToTotalTW(years_tv, extra_months_tv, total_months_tv));
         extra_months_tv.addTextChangedListener(generateMainToTotalTW(years_tv, extra_months_tv, total_months_tv));
-        total_months_tv.addTextChangedListener(generateTotalTW(total_months_tv, years_tv, extra_months_tv));
+        total_months_tv.addTextChangedListener(generateTotalTW(years_tv, extra_months_tv, total_months_tv));
+//        months_tv.addTextChangedListener((generateMainToTotalTW(months_tv, extra_weeks_tv, total_weeks_tv)));
+//        extra_weeks_tv.addTextChangedListener((generateMainToTotalTW(months_tv, extra_weeks_tv, total_weeks_tv)));
+//        total_weeks_tv.addTextChangedListener((generateTotalTW(months_tv, extra_weeks_tv, total_weeks_tv)));
     }
 
     private TextWatcher generateTotalTW(
-            final TextView total_tv,
             final TextView main_tv,
-            final TextView extra_tv) {
+            final TextView extra_tv,
+            final TextView total_tv
+            ) {
         return new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -57,7 +68,6 @@ public class TimeConverter extends AppCompatActivity {
                       main_tv.setText("");
                       extra_tv.setText("");
                   }
-
                 }
             }
 
@@ -132,6 +142,11 @@ public class TimeConverter extends AppCompatActivity {
             case "total_months":
                 array[0] = op / YEAR_TO_MONTH_RATIO;
                 array[1] = op % YEAR_TO_MONTH_RATIO;
+                break;
+//            case "total_weeks":
+//                array[0] = op / MONTH_TO_WEEK_RATIO;
+//                array[1] = op % MONTH_TO_WEEK_RATIO;
+//                break;
         }
         return array;
     }
@@ -140,6 +155,8 @@ public class TimeConverter extends AppCompatActivity {
         switch(operation){
             case "year_to_months":
                return op * YEAR_TO_MONTH_RATIO;
+//            case "month_to_weeks":
+//                return op * MONTH_TO_WEEK_RATIO;
             default:
                 return 0;
         }
