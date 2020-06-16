@@ -14,18 +14,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button converterActivityBtn = findViewById(R.id.converterActivityBtn);
+        Button unitConverterBtn = findViewById(R.id.unitConverterBtn);
+        Button timeConverterBtn = findViewById(R.id.timeConverterBtn);
 
-        converterActivityBtn.setOnClickListener(new View.OnClickListener() {
+        timeConverterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openConverterActivity();
+                openActivity(TimeConverter.class);
+            }
+        });
+
+        unitConverterBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity(UnitConverter.class);
             }
         });
     }
 
-    private void openConverterActivity() {
-        Intent intent = new Intent(this, UnitConverter.class);
+
+    private void openActivity(Class<?> activityClass) {
+        Intent intent = new Intent(this, activityClass);
         startActivity(intent);
     }
 }
